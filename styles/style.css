@@ -24,17 +24,17 @@
 	display: inline-block;
 	border: 1px solid black;
 	border-radius: 5px;
-	font-size: 250%;
+	font-size: 300%;
 	text-align: center;
-	height: 42px;
-	width: 36px;
+	width: 40px;
 	margin:2px;
 	box-shadow: -4px 3px black;
+	background-color: white;
 	animation: sizing 1s ease infinite alternate;
 }
 
 button {
-	font-size: 250%;
+	font-size: 300%;
 	border-radius: 15px;
 	background-color: #ebf3ff;
 	position: relative;
