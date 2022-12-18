@@ -8,20 +8,25 @@
 		<div class="container">
 			<div class="background" id="start" style="display:flex;text-align:center;">
 				<div class="reward">
-					Разгадайте название известного бренда складывая картинки. Нажимайте буквы, чтобы складывать слова в нижних окошках.
+					Разгадайте название известного бренда сложив вместе слова на картинках. Нажимайте буквы, чтобы сложить загаданный бренд.
 					<button onClick="startGame()">Начать</button>
 				</div>
 			</div>
-			<div class="timer" id="timer1" style="display:none;top:1%;left:48.5%">45</div>
+			<div class="timer" id="timer1" style="display:none;top:1%;left:48.5%">60</div>
+			<video autoplay loop muted id="background-video">
+				<source src="images/background1.mp4" type="video/mp4">
+			</video>
 			<div class="background" id="com1" style="display:none;">
-				<img src="images/roll.jpg" width="200" style="top:5%;left:32%;">
-				<img src="images/cake.jpg" width="200" style="top:13%;left:56%;">
-				<button style="top:-30%;left:18%;" onClick="setCurrent(this)">R</button>
-				<button style="top:-25%;left:-20%;" onClick="setCurrent(this)">O</button>
-				<button style="top:15%;left:40%;" onClick="setCurrent(this)">L</button>
-				<button style="top:20%;left:-13%;" onClick="setCurrent(this)">E</button>
+				<img src="images/roll.jpg" width="200" style="top:-10%;left:18%;">
+				<div class="char" style="position:relative;top:-10%;left:22%;height:10%;width:20%;">+</div>
+				<img src="images/cake.jpg" width="200" style="top:-10%;left:25%;">
+				<div class="char" style="0;position:relative;height:10%;width:20%;top:-10%;left:30%;">=?</div>
+				<button style="top:-35%;left:10%;" onClick="setCurrent(this)">R</button>
+				<button style="top:-35%;left:-18%;" onClick="setCurrent(this)">O</button>
+				<button style="top:15%;left:28%;" onClick="setCurrent(this)">L</button>
+				<button style="top:30%;left:-45%;" onClick="setCurrent(this)">E</button>
 				<button style="top:-28%;left:25%;" onClick="setCurrent(this)">X</button>
-				<div style="display:flex;position:relative;top:35%;left:-10%;">
+				<div style="display:flex;position:relative;top:35%;left:-33%;">
 					<div class="char" id="char1"></div>
 					<div class="char" id="char2"></div>
 					<div class="char" id="char3"></div>
@@ -32,18 +37,20 @@
 				</div>
 			</div>
 			<div class="background" id="com2" style="display:none">
-				<img src="images/boot.jpg" width="200" style="top:15%;left:32%;">
-				<img src="images/mud.jpg" width="200" style="top:13%;left:56%;">
-				<button style="top:-30%;left:18%;" onClick="setCurrent(this)">V</button>
-				<button style="top:-25%;left:-5%;" onClick="setCurrent(this)">A</button>
-				<button style="top:15%;left:40%;" onClick="setCurrent(this)">L</button>
-				<button style="top:20%;left:-13%;" onClick="setCurrent(this)">E</button>
-				<button style="top:-35%;left:70%;" onClick="setCurrent(this)">N</button>
-				<button style="top:20%;left:16%;" onClick="setCurrent(this)">T</button>
-				<button style="top:25%;left:60%;" onClick="setCurrent(this)">I</button>
-				<button style="top:-30%;left:42%;" onClick="setCurrent(this)">N</button>
+				<img src="images/boot.jpg" width="200" style="top:-10%;left:38%;">
+				<div class="char" style="position:relative;top:-10%;left:42%;height:10%;width:20%;">+</div>
+				<img src="images/mud.jpg" width="200" style="top:-10%;left:45%;">
+				<div class="char" style="position:relative;height:10%;width:20%;top:-10%;left:50%;">=?</div>
+				<button style="top:-35%;left:18%;" onClick="setCurrent(this)">V</button>
+				<button style="top:-40%;left:-15%;" onClick="setCurrent(this)">A</button>
+				<button style="top:18%;left:45%;" onClick="setCurrent(this)">L</button>
+				<button style="top:18%;left:-25%;" onClick="setCurrent(this)">E</button>
+				<button style="top:-25%;left:40%;" onClick="setCurrent(this)">N</button>
+				<button style="top:15%;left:16%;" onClick="setCurrent(this)">T</button>
+				<button style="top:25%;left:35%;" onClick="setCurrent(this)">I</button>
+				<button style="top:-33%;left:-50%;" onClick="setCurrent(this)">N</button>
 				<button style="top:-18%;left:30%;" onClick="setCurrent(this)">O</button>
-				<div style="display:flex;position:relative;top:35%;left:-20%;">
+				<div style="display:flex;position:relative;top:35%;left:-48%;">
 					<div class="char" id="char1"></div>
 					<div class="char" id="char2"></div>
 					<div class="char" id="char3"></div>
@@ -58,14 +65,16 @@
 				</div>
 			</div>
 			<div class="background" id="com3" style="display:none">
-				<img src="images/dryer.jpg" width="200" style="top:10%;left:32%;">
-				<img src="images/disk.jpg" width="200" style="top:12%;left:56%;">
-				<button style="top:-30%;left:18%;" onClick="setCurrent(this)">F</button>
-				<button style="top:-25%;left:-20%;" onClick="setCurrent(this)">E</button>
-				<button style="top:15%;left:40%;" onClick="setCurrent(this)">N</button>
-				<button style="top:20%;left:-13%;" onClick="setCurrent(this)">D</button>
-				<button style="top:-28%;left:25%;" onClick="setCurrent(this)">I</button>
-				<div style="display:flex;position:relative;top:35%;left:-10%;">
+				<img src="images/dryer.jpg" width="200" style="top:-10%;left:18%;">
+				<div class="char" style="position:relative;top:-10%;left:22%;height:10%;width:20%;">+</div>
+				<img src="images/disk.jpg" width="200" style="top:-10%;left:25%;">
+				<div class="char" style="position:relative;height:10%;width:20%;top:-10%;left:30%;">=?</div>
+				<button style="top:-40%;left:18%;" onClick="setCurrent(this)">F</button>
+				<button style="top:-42%;left:-20%;" onClick="setCurrent(this)">E</button>
+				<button style="top:15%;left:30%;" onClick="setCurrent(this)">N</button>
+				<button style="top:20%;left:-45%;" onClick="setCurrent(this)">D</button>
+				<button style="top:-22%;left:25%;" onClick="setCurrent(this)">I</button>
+				<div style="display:flex;position:relative;top:35%;left:-40%;">
 					<div class="char" id="char1"></div>
 					<div class="char" id="char2"></div>
 					<div class="char" id="char3"></div>
@@ -76,18 +85,20 @@
 				</div>
 			</div>
 			<div class="background" id="com4" style="display:none">
-				<img src="images/off.jpg" width="200" style="top:13%;left:32%;">
-				<img src="images/white.jpg" width="200" style="top:18%;left:56%;">
-				<button style="top:-30%;left:18%;" onClick="setCurrent(this)">O</button>
-				<button style="top:-25%;left:80%;" onClick="setCurrent(this)">F</button>
-				<button style="top:15%;left:40%;" onClick="setCurrent(this)">F</button>
+				<img src="images/off.jpg" width="200" style="top:-10%;left:38%;">
+				<div class="char" style="position:relative;top:-10%;left:42%;height:10%;width:20%;">+</div>
+				<img src="images/white.jpg" width="200" style="top:-10%;left:45%;">
+				<div class="char" style="position:relative;height:10%;width:20%;top:-10%;left:50%;">=?</div>
+				<button style="top:-40%;left:-20%;" onClick="setCurrent(this)">O</button>
+				<button style="top:20%;left:-20%;" onClick="setCurrent(this)">F</button>
+				<button style="top:10%;left:45%;" onClick="setCurrent(this)">F</button>
 				<button style="top:20%;left:-5%;" onClick="setCurrent(this)">W</button>
-				<button style="top:-33%;left:25%;" onClick="setCurrent(this)">H</button>
-				<button style="top:25%;left:15%;" onClick="setCurrent(this)">A</button>
-				<button style="top:-30%;left:40%;" onClick="setCurrent(this)">I</button>
-				<button style="top:35%;left:60%;" onClick="setCurrent(this)">T</button>
+				<button style="top:-35%;left:25%;" onClick="setCurrent(this)">H</button>
+				<button style="top:20%;left:15%;" onClick="setCurrent(this)">A</button>
+				<button style="top:-30%;left:-10%;" onClick="setCurrent(this)">I</button>
+				<button style="top:-40%;left:-25%;" onClick="setCurrent(this)">T</button>
 				<button style="top:-28%;left:25%;" onClick="setCurrent(this)">E</button>
-				<div style="display:flex;position:relative;top:35%;left:-20%;">
+				<div style="display:flex;position:relative;top:35%;left:-45%;">
 					<div class="char" id="char1"></div>
 					<div class="char" id="char2"></div>
 					<div class="char" id="char3"></div>
@@ -103,19 +114,21 @@
 				</div>
 			</div>
 			<div class="background" id="com5" style="display:none">
-				<img src="images/balance.jpg" width="200" style="top:15%;left:35%;">
-				<img src="images/jaguar.jpg" width="200" style="top:19%;left:52%;">
-				<button style="top:-30%;left:18%;" onClick="setCurrent(this)">B</button>
-				<button style="top:-25%;left:80%;" onClick="setCurrent(this)">A</button>
-				<button style="top:15%;left:40%;" onClick="setCurrent(this)">L</button>
-				<button style="top:20%;left:-8%;" onClick="setCurrent(this)">E</button>
-				<button style="top:-5%;left:30%;" onClick="setCurrent(this)">N</button>
-				<button style="top:18%;left:60%;" onClick="setCurrent(this)">C</button>
-				<button style="top:-10%;left:-5%;" onClick="setCurrent(this)">I</button>
-				<button style="top:-32%;left:40%;" onClick="setCurrent(this)">A</button>
-				<button style="top:-20%;left:10%;" onClick="setCurrent(this)">G</button>
+				<img src="images/balance.jpg" width="200" style="top:-10%;left:38%;">
+				<div class="char" style="position:relative;top:-10%;left:42%;height:10%;width:20%;">+</div>
+				<img src="images/jaguar.jpg" width="200" style="top:-10%;left:45%;">
+				<div class="char" style="position:relative;height:10%;width:20%;top:-10%;left:50%;">=?</div>
+				<button style="top:-35%;left:-10%;" onClick="setCurrent(this)">B</button>
+				<button style="top:20%;left:-15%;" onClick="setCurrent(this)">A</button>
+				<button style="top:15%;left:30%;" onClick="setCurrent(this)">L</button>
+				<button style="top:15%;left:-5%;" onClick="setCurrent(this)">E</button>
+				<button style="top:-30%;left:30%;" onClick="setCurrent(this)">N</button>
+				<button style="top:-40%;left:-15%;" onClick="setCurrent(this)">C</button>
+				<button style="top:22%;left:-5%;" onClick="setCurrent(this)">I</button>
+				<button style="top:-32%;left:35%;" onClick="setCurrent(this)">A</button>
+				<button style="top:-35%;left:-5%;" onClick="setCurrent(this)">G</button>
 				<button style="top:13%;left:20%;" onClick="setCurrent(this)">A</button>
-				<div style="display:flex;position:relative;top:35%;left:-20%;">
+				<div style="display:flex;position:relative;top:35%;left:-50%;">
 					<div class="char" id="char1"></div>
 					<div class="char" id="char2"></div>
 					<div class="char" id="char3"></div>
@@ -132,9 +145,9 @@
 			</div>
 			<div class="background" id="end" style="display:none;text-align:center;flex-direction:column;">
 				<div class="reward" id="count"></div>
-				<div class="reward" id="first-reward" style="display:none;">Попробуйте еще раз или переходите к нам в <a href="">магазин.</a><br><button onClick="window.location.reload()">Начать заново.</button></div>
-				<div class="reward" id="second-reward" style="display:none;">Вы выиграли бесплатную доставку до 31.12. <a href="">магазин</a></div>
-				<div class="reward" id="third-reward" style="display:none;">Вы выиграли бесплатную доставку и скидку 5% на любое изделие.<a href="">магазин</a></div>
+				<div class="reward" id="first-reward" style="display:none;">Попробуйте еще раз или переходите к нам в <a href="https://vk.com/club212173736">магазин.</a><br><button onClick="window.location.reload()">Начать заново.</button></div>
+				<div class="reward" id="second-reward" style="display:none;">Вы выиграли бесплатную доставку до 31.12. <a href="https://vk.com/club212173736">магазин</a></div>
+				<div class="reward" id="third-reward" style="display:none;">Вы выиграли бесплатную доставку и скидку 5% на любое изделие.<a href="https://vk.com/club212173736">магазин</a></div>
 				<br><div class="reward">Сделайте скрин с результатом и отправьте нам. Выберем для вас изделие в течение 15 минут</div>
 			</div>
 		</div>

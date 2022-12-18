@@ -18,28 +18,35 @@
 	justify-content: center;
 	border: 2px solid black;
 	border-radius: 15px;
-	background-color: #dcfaf3;
 }
 
 .char {
 	display: inline-block;
 	border: 1px solid black;
 	border-radius: 5px;
-	font-size: 36px;
+	font-size: 250%;
 	text-align: center;
 	height: 42px;
 	width: 36px;
 	margin:2px;
 	box-shadow: -4px 3px black;
+	animation: sizing 1s ease infinite alternate;
 }
 
 button {
-	font-size: 36px;
+	font-size: 250%;
 	border-radius: 15px;
 	background-color: #ebf3ff;
 	position: relative;
 	margin:2px;
 	box-shadow: -3px 2px black;
+	animation: sizing 1s ease infinite alternate;
+}
+
+@keyframes sizing {
+	100% {
+		transform:scale(0.9,0.9);
+	}
 }
 
 button:hover {
@@ -73,5 +80,16 @@ button:disabled {
 }
 
 img {
-	position: absolute;
+	position: relative;
+}
+
+#background-video {
+	position:absolute;
+	width: 800px;
+	height: 500px;
+	top:0;
+	object-fit: fill;
+	z-index: -1;
+	border: 2px solid black;
+	border-radius: 15px;
 }

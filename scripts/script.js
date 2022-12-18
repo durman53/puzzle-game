@@ -3,7 +3,7 @@ answers = {1: "ROLEX", 2: "VALENTINO", 3: "FENDI", 4: "OFFWHAITE", 5: "BALENCIAG
 playerAnswers = {};
 correctAnswers = 0;
 
-var timer = 45;
+var timer = 60;
 var timerElement = document.getElementById("timer1");
 
 for (let lvl = 1; lvl <= 5; lvl++) {
@@ -57,7 +57,7 @@ function openNext() {
 	}
 	else {
 		document.getElementById("com" + currentLvl).style.display = "flex";
-		timer = 45;
+		timer = 60;
 		timerElement.innerHTML = timer;
 		clearInterval(updater);
 		updater = setInterval(timerUpdate, 1000);
