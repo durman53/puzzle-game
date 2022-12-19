@@ -23,7 +23,6 @@ body {
 	justify-content: center;
 	border: 2px solid black;
 	border-radius: 15px;
-	transform:scale(0.5,0.5);
 }
 
 .char {
@@ -98,5 +97,4 @@ img {
 	z-index: -1;
 	border: 2px solid black;
 	border-radius: 15px;
-	transform:scale(0.5,0.5);
 }
