@@ -1,12 +1,12 @@
-levels = {1: [], 2: [], 3: [], 4: [], 5: []};
-answers = {1: "ROLEX", 2: "VALENTINO", 3: "FENDI", 4: "OFFWHAITE", 5: "BALENCIAGA"};
+levels = {1: [], 2: [], 3: [], 4: []};
+answers = {1: "ROLEX", 2: "VALENTINO", 3: "FENDI", 4: "BALENCIAGA"};
 playerAnswers = {};
 correctAnswers = 0;
 
 var timer = 60;
 var timerElement = document.getElementById("timer1");
 
-for (let lvl = 1; lvl <= 5; lvl++) {
+for (let lvl = 1; lvl <= 4; lvl++) {
 	tmp = document.getElementById("com" + lvl);
 	for (let i = 0; i < answers[lvl].length; i++) {
 		levels[lvl][i] = tmp.querySelector("#char" + (i+1));
@@ -39,15 +39,15 @@ function openNext() {
 	pressed = [];
 	document.getElementById("com" + currentLvl).style.display = "none";
 	currentLvl++;
-	if (currentLvl == 6) {
+	if (currentLvl == 5) {
 		document.getElementById("end").style.display = "flex";
 		timerElement.remove();
 		updater = 0;
 		document.getElementById("count").innerHTML = "Правильных ответов: " + correctAnswers;
-		if (correctAnswers < 2) {
+		if (correctAnswers < 1) {
 			document.getElementById("first-reward").style.display = "inline";
 		}
-		else if (correctAnswers < 4) {
+		else if (correctAnswers < 3) {
 			document.getElementById("second-reward").style.display = "inline";
 		} else {
 			document.getElementById("third-reward").style.display = "inline";
@@ -76,6 +76,19 @@ function confirm() {
 		playerAnswers[currentLvl] = word;
 		openNext();
 	}
+}
+
+function nextLevel() {
+	var word = "";
+	for (let i = 0; i < levels[currentLvl].length; i++) {
+		word += levels[currentLvl][i].innerHTML;
+	}
+	console.log(word);
+	if (word == answers[currentLvl]) {
+		correctAnswers++;
+	}
+	playerAnswers[currentLvl] = word;
+	openNext();
 }
 
 function timerUpdate() {
